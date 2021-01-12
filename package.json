@@ -1,6 +1,6 @@
 {
   "name": "m-tinypng",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Tinypng 压缩图片",
   "main": "index.js",
   "bin": {

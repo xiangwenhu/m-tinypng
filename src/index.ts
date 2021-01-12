@@ -48,16 +48,16 @@ async function startTiny() {
             const sourceDir = utils.ensureCh(pattern);
             const distDir = dist[index] || dist[dist.length - 1];
 
-            const globbyPattern = sourceDir + "**/*.*";
+            const globbyPatterns = exts.map(ext=> sourceDir + `**/*${ext}`);
 
             // console.log("--------")
             // console.log("distPath", distDir);
             // console.log("sourcePath", sourceDir);
 
-            // console.log("globbyPattern", globbyPattern);
+            console.log("globbyPatterns", globbyPatterns);
             // console.log("--------")
 
-            const paths = await globby(globbyPattern, {
+            const paths = await globby(globbyPatterns, {
                 gitignore,
                 expandDirectories: {
                     files: exts.map(ext => `*${ext}`),
